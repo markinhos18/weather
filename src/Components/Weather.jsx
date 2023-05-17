@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function App() {
+const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [address, setAddress] = useState('');
 
