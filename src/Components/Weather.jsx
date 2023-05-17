@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import './styles.css';
-
-// const GEOCODE_API_KEY = 'YOUR_GEOCODE_API_KEY'; // Replace with your Geocode API key
-// const OPENMETEO_API_KEY = 'YOUR_OPENMETEO_API_KEY'; // Replace with your OpenMeteo API key
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
