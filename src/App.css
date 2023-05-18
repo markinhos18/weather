@@ -1,13 +1,27 @@
 /* styles.css */
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
-  padding: 20px;
+  background-image: url(../src/Assets/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container{
+  padding: 10%;
 }
 
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: white;
 }
 
 form {
@@ -22,7 +36,7 @@ input[type="text"] {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: blue;
   color: white;
   border: none;
   cursor: pointer;
@@ -31,6 +45,8 @@ button {
 .weather-container {
   margin-top: 20px;
   border: 1px solid #ccc;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   padding: 10px;
   display: inline-block;
 }
@@ -38,9 +54,11 @@ button {
 h2 {
   font-size: 20px;
   margin-bottom: 10px;
+  color: white;
 }
 
 p {
-  font-size: 16px;
+  font-size: 30px;
+  color: white;
   margin-bottom: 5px;
 }
