@@ -8,6 +8,7 @@ const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [address, setAddress] = useState('');
   const [ dataAddress, setDataAddress] = useState('');
+  
 
 
   const fetchWeatherData = async (data) => {
@@ -53,9 +54,36 @@ const App = () => {
     return data.toLocaleString('pt-BR', options);
   };
 
+  function converterDirecaoVento(graus) {
+    // Definir os intervalos de graus para cada nome cardeal
+    const intervalos = [
+      { nome: 'Norte', de: 0, ate: 22.5 },
+      { nome: 'Norte-Nordeste', de: 22.5, ate: 67.5 },
+      { nome: 'Nordeste', de: 67.5, ate: 112.5 },
+      { nome: 'Leste-Nordeste', de: 112.5, ate: 157.5 },
+      { nome: 'Leste', de: 157.5, ate: 202.5 },
+      { nome: 'Leste-Sudeste', de: 202.5, ate: 247.5 },
+      { nome: 'Sudeste', de: 247.5, ate: 292.5 },
+      { nome: 'Sul-Sudeste', de: 292.5, ate: 337.5 },
+      { nome: 'Sul', de: 337.5, ate: 360 }
+    ];
+  
+    // Verificar em qual intervalo o valor de graus se encaixa
+    for (const intervalo of intervalos) {
+      if (graus >= intervalo.de && graus < intervalo.ate) {
+        return intervalo.nome;
+      }
+    }
+  
+    // Se o valor estiver fora do intervalo (por exemplo, 360), retornar 'N'
+    return 'Direção do vento não encontrada';
+  }
 
-  console.log(dataAddress);
-  console.log(weatherData);
+
+
+
+  // console.log(dataAddress);
+  // console.log(weatherData);
   
   return (
     
@@ -78,7 +106,8 @@ const App = () => {
           
           <p>Temperatura {weatherData.current_weather.temperature}<b>°C</b></p>
           <p>Velocidade do vento {weatherData.current_weather.windspeed} km/h</p>
-          <p>Direção do vento {weatherData.current_weather.winddirection} </p>
+          {/* <p>Direção do vento {weatherData.current_weather.winddirection} </p> */}
+          <p>Direção do vento {converterDirecaoVento(weatherData.current_weather.winddirection)} </p>
           <p>{formatarDataHora(weatherData.current_weather.time)} </p>
 
         </div>
