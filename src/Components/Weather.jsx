@@ -54,8 +54,8 @@ const App = () => {
   };
 
 
-  // console.log(dataAddress);
-  // console.log(weatherData);
+  console.log(dataAddress);
+  console.log(weatherData);
   
   return (
     
@@ -76,8 +76,8 @@ const App = () => {
         <div className="weather-container">
           <h1>{dataAddress.display_name}</h1>
           
-          <p>{weatherData.current_weather.temperature}<b>°C</b></p>
-          <p>Velocidade {weatherData.current_weather.windspeed} km/h</p>
+          <p>Temperatura {weatherData.current_weather.temperature}<b>°C</b></p>
+          <p>Velocidade do vento {weatherData.current_weather.windspeed} km/h</p>
           <p>Direção do vento {weatherData.current_weather.winddirection} </p>
           <p>{formatarDataHora(weatherData.current_weather.time)} </p>
 
